@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Palette Studio - Export</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#b1f0ce",
+                        "surface-container": "#eceeea",
+                        "on-secondary-container": "#663500",
+                        "surface-container-low": "#f2f4f0",
+                        "on-surface": "#191c1a",
+                        "on-primary-fixed-variant": "#0e5138",
+                        "on-error": "#ffffff",
+                        "background": "#f8faf6",
+                        "secondary": "#904d00",
+                        "on-surface-variant": "#404943",
+                        "secondary-container": "#fe932c",
+                        "on-primary-fixed": "#002114",
+                        "on-primary-container": "#a8e7c5",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#ffdcc3",
+                        "outline": "#707973",
+                        "on-secondary-fixed": "#2f1500",
+                        "on-background": "#191c1a",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#bfc9c1",
+                        "primary-fixed-dim": "#95d4b3",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "primary-container": "#2d6a4f",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#d9d6ff",
+                        "surface-dim": "#d8dbd7",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#eff1ed",
+                        "inverse-surface": "#2e312f",
+                        "primary": "#0f5238",
+                        "surface-tint": "#2c694e",
+                        "surface-variant": "#e1e3df",
+                        "tertiary-fixed": "#e2dfff",
+                        "on-tertiary-fixed": "#0f0069",
+                        "surface": "#f8faf6",
+                        "inverse-primary": "#95d4b3",
+                        "on-tertiary-fixed-variant": "#3323cc",
+                        "surface-container-high": "#e7e9e5",
+                        "tertiary-fixed-dim": "#c3c0ff",
+                        "tertiary-container": "#4e45e4",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e1e3df",
+                        "tertiary": "#3424cd",
+                        "surface-bright": "#f8faf6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "xl": "80px",
+                        "margin": "32px",
+                        "gutter": "24px",
+                        "sm": "12px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Epilogue"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Epilogue"],
+                        "headline-md": ["Epilogue"],
+                        "headline-lg": ["Epilogue"],
+                        "label-md": ["JetBrains Mono"],
+                        "body-lg": ["Manrope"],
+                        "body-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface dark:bg-on-background z-40 transition-shadow duration-300" id="topAppBar">
+<div class="flex justify-between items-center px-gutter py-md max-w-[1440px] mx-auto">
+<div class="flex items-center gap-4 hover:opacity-80 transition-opacity cursor-pointer">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" style="font-variation-settings: 'FILL' 1;">palette</span>
+<h1 class="font-display-lg text-headline-md text-primary dark:text-primary-fixed tracking-tight">Palette Studio</h1>
+</div>
+<div class="hidden md:flex gap-8">
+<nav class="flex gap-6">
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md hover:opacity-80 transition-opacity" href="#">Explore</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md hover:opacity-80 transition-opacity" href="#">Palettes</a>
+<a class="text-primary dark:text-primary-fixed font-bold font-label-md text-label-md hover:opacity-80 transition-opacity scale-95 transition-transform duration-150" href="#">Studio</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md hover:opacity-80 transition-opacity" href="#">Profile</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant dark:text-outline-variant">search</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-margin md:px-lg py-xl">
+<div class="mb-xl text-center md:text-left">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-sm">Export Palette</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Chromatic Studio 54-color master palette. Ready to integrate into your workflow.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Preview Section -->
+<div class="lg:col-span-7 space-y-lg">
+<section>
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">eco</span> Nature Collection
+                    </h3>
+<div class="grid grid-cols-6 sm:grid-cols-9 gap-2">
+<!-- Simulated Swatches -->
+<div class="aspect-square rounded-DEFAULT bg-[#2d6a4f] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Forest Green"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#0f5238] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Deep Pine"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#a8e7c5] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Mint Tint"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#95d4b3] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Sage Light"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#707973] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Moss Grey"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#404943] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Dark Fern"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#2c694e] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Ivy"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#002114] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Midnight Leaf"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#b1f0ce] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Spring Shoot"></div>
+</div>
+</section>
+<section>
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">light_mode</span> Sun Collection
+                    </h3>
+<div class="grid grid-cols-6 sm:grid-cols-9 gap-2">
+<div class="aspect-square rounded-DEFAULT bg-[#fe932c] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Vibrant Orange"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#904d00] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Burnt Sienna"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#ffb77d] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Peach Dust"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#ffdcc3] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Pale Dawn"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#663500] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Deep Rust"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#2f1500] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Ember Black"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#ffdad6] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Rose Quartz"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#ba1a1a] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Crimson"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#93000a] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Oxblood"></div>
+</div>
+</section>
+<section>
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">water_drop</span> Water Collection
+                    </h3>
+<div class="grid grid-cols-6 sm:grid-cols-9 gap-2">
+<div class="aspect-square rounded-DEFAULT bg-[#4e45e4] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Royal Blue"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#3424cd] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Deep Sea"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#3323cc] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Cobalt"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#0f0069] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Abyss"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#d9d6ff] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Ice Violet"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#e2dfff] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Frost"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#c3c0ff] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Periwinkle"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#e1e3df] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Misty Grey"></div>
+<div class="aspect-square rounded-DEFAULT bg-[#d8dbd7] border border-outline-variant/30 cursor-pointer hover:-translate-y-1 transition-transform" title="Cloud Base"></div>
+</div>
+</section>
+</div>
+<!-- Export Options -->
+<div class="lg:col-span-5 space-y-md">
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-lg p-md">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md">Export Formats</h3>
+<div class="space-y-sm">
+<!-- CSS Card -->
+<div class="group relative border border-outline-variant/30 rounded-lg p-md hover:border-primary transition-colors cursor-pointer bg-surface-container-low hover:bg-surface-container">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-bold">CSS Variables</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Standard CSS custom properties</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">css</span>
+</div>
+<div class="bg-surface-container-lowest rounded-DEFAULT p-sm border border-outline-variant/20 overflow-hidden relative">
+<pre class="font-label-sm text-label-sm text-on-surface-variant overflow-x-auto">:root {
+  --color-nature-1: #2d6a4f;
+  --color-nature-2: #0f5238;
+  /* ... 52 more */
+}</pre>
+<div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-primary text-on-primary rounded-DEFAULT px-2 py-1 text-xs font-label-sm flex items-center gap-1 hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[14px]">content_copy</span> Copy
+                                    </button>
+</div>
+</div>
+</div>
+<!-- JSON Card -->
+<div class="group relative border border-outline-variant/30 rounded-lg p-md hover:border-primary transition-colors cursor-pointer bg-surface-container-low hover:bg-surface-container">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-bold">JSON Data</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Structured data for JS/React</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">data_object</span>
+</div>
+<div class="absolute inset-0 flex items-center justify-end pr-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+<button class="bg-primary text-on-primary rounded-DEFAULT px-3 py-1.5 text-sm font-label-sm flex items-center gap-1 shadow-[0_4px_16px_rgba(0,0,0,0.1)] pointer-events-auto hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[16px]">download</span> Download
+                                </button>
+</div>
+</div>
+<!-- ASE Card -->
+<div class="group relative border border-outline-variant/30 rounded-lg p-md hover:border-primary transition-colors cursor-pointer bg-surface-container-low hover:bg-surface-container">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-bold">Adobe .ASE</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">For Photoshop &amp; Illustrator</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">brush</span>
+</div>
+<div class="absolute inset-0 flex items-center justify-end pr-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+<button class="bg-primary text-on-primary rounded-DEFAULT px-3 py-1.5 text-sm font-label-sm flex items-center gap-1 shadow-[0_4px_16px_rgba(0,0,0,0.1)] pointer-events-auto hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[16px]">download</span> Download
+                                </button>
+</div>
+</div>
+</div>
+<div class="mt-lg pt-md border-t border-outline-variant/30 flex justify-end">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-lg py-sm rounded-lg hover:bg-surface-tint hover:-translate-y-0.5 transition-all shadow-[0_8px_24px_rgba(0,0,0,0.05)] flex items-center gap-2">
+<span class="material-symbols-outlined">library_add_check</span> Copy All Formats
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin py-base bg-surface-container-low dark:bg-inverse-surface rounded-t-full shadow-sm">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-base py-xs hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-colors group" href="#">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform">auto_awesome</span>
+<span class="font-label-sm text-label-sm">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-base py-xs hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-colors group" href="#">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform">collections</span>
+<span class="font-label-sm text-label-sm">Palettes</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-full px-base py-xs translate-y-[-2px] transition-transform duration-200 shadow-sm" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">brush</span>
+<span class="font-label-sm text-label-sm font-bold">Studio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-base py-xs hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-colors group" href="#">
+<span class="material-symbols-outlined mb-1 group-hover:scale-110 transition-transform">account_circle</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple scroll shadow for top app bar
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('topAppBar');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-sm');
+            } else {
+                header.classList.remove('shadow-sm');
+            }
+        });
+    </script>
+</body></html>
